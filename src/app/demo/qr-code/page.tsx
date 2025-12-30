@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Sun } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { mockUser } from "@/lib/data";
 import { QRCodeSVG } from "qrcode.react";
@@ -27,17 +27,6 @@ export default function QRCodePage() {
         transition={{ duration: 0.3 }}
       >
         <Card className="text-center py-8 px-6">
-          {/* 輝度アップ表示 */}
-          <motion.div
-            className="flex items-center justify-center gap-2 text-[#D4A853] mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <Sun className="w-5 h-5" />
-            <span className="text-sm font-medium">画面が明るくなっています</span>
-          </motion.div>
-
           {/* QRコード */}
           <motion.div
             className="mx-auto mb-6"
