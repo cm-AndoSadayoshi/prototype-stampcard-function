@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, Sun } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { mockUser } from "@/lib/data";
+import { QRCodeSVG } from "qrcode.react";
 
 export default function QRCodePage() {
   return (
@@ -44,71 +45,13 @@ export default function QRCodePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="w-48 h-48 mx-auto bg-white border-4 border-gray-100 rounded-xl p-3">
-              {/* QRコードのダミー表示 */}
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                {/* QRコードパターン */}
-                <rect x="0" y="0" width="30" height="30" fill="#000"/>
-                <rect x="5" y="5" width="20" height="20" fill="#fff"/>
-                <rect x="10" y="10" width="10" height="10" fill="#000"/>
-
-                <rect x="70" y="0" width="30" height="30" fill="#000"/>
-                <rect x="75" y="5" width="20" height="20" fill="#fff"/>
-                <rect x="80" y="10" width="10" height="10" fill="#000"/>
-
-                <rect x="0" y="70" width="30" height="30" fill="#000"/>
-                <rect x="5" y="75" width="20" height="20" fill="#fff"/>
-                <rect x="10" y="80" width="10" height="10" fill="#000"/>
-
-                {/* データパターン */}
-                <rect x="35" y="5" width="5" height="5" fill="#000"/>
-                <rect x="45" y="5" width="5" height="5" fill="#000"/>
-                <rect x="55" y="5" width="5" height="5" fill="#000"/>
-                <rect x="35" y="15" width="5" height="5" fill="#000"/>
-                <rect x="50" y="15" width="5" height="5" fill="#000"/>
-                <rect x="60" y="15" width="5" height="5" fill="#000"/>
-                <rect x="40" y="25" width="5" height="5" fill="#000"/>
-                <rect x="55" y="25" width="5" height="5" fill="#000"/>
-
-                <rect x="5" y="35" width="5" height="5" fill="#000"/>
-                <rect x="15" y="35" width="5" height="5" fill="#000"/>
-                <rect x="25" y="35" width="5" height="5" fill="#000"/>
-                <rect x="5" y="45" width="5" height="5" fill="#000"/>
-                <rect x="20" y="45" width="5" height="5" fill="#000"/>
-                <rect x="10" y="55" width="5" height="5" fill="#000"/>
-                <rect x="25" y="55" width="5" height="5" fill="#000"/>
-
-                <rect x="35" y="35" width="30" height="30" fill="#000"/>
-                <rect x="40" y="40" width="20" height="20" fill="#fff"/>
-                <rect x="45" y="45" width="10" height="10" fill="#000"/>
-
-                <rect x="70" y="35" width="5" height="5" fill="#000"/>
-                <rect x="80" y="35" width="5" height="5" fill="#000"/>
-                <rect x="90" y="35" width="5" height="5" fill="#000"/>
-                <rect x="75" y="45" width="5" height="5" fill="#000"/>
-                <rect x="85" y="45" width="5" height="5" fill="#000"/>
-                <rect x="70" y="55" width="5" height="5" fill="#000"/>
-                <rect x="80" y="55" width="5" height="5" fill="#000"/>
-                <rect x="95" y="55" width="5" height="5" fill="#000"/>
-
-                <rect x="35" y="70" width="5" height="5" fill="#000"/>
-                <rect x="45" y="70" width="5" height="5" fill="#000"/>
-                <rect x="55" y="70" width="5" height="5" fill="#000"/>
-                <rect x="40" y="80" width="5" height="5" fill="#000"/>
-                <rect x="50" y="80" width="5" height="5" fill="#000"/>
-                <rect x="60" y="80" width="5" height="5" fill="#000"/>
-                <rect x="35" y="90" width="5" height="5" fill="#000"/>
-                <rect x="50" y="90" width="5" height="5" fill="#000"/>
-                <rect x="65" y="90" width="5" height="5" fill="#000"/>
-
-                <rect x="75" y="70" width="5" height="5" fill="#000"/>
-                <rect x="85" y="70" width="5" height="5" fill="#000"/>
-                <rect x="70" y="80" width="5" height="5" fill="#000"/>
-                <rect x="80" y="80" width="5" height="5" fill="#000"/>
-                <rect x="90" y="80" width="5" height="5" fill="#000"/>
-                <rect x="75" y="90" width="5" height="5" fill="#000"/>
-                <rect x="95" y="90" width="5" height="5" fill="#000"/>
-              </svg>
+            <div className="w-48 h-48 mx-auto bg-white border-4 border-gray-100 rounded-xl p-3 flex items-center justify-center">
+              <QRCodeSVG
+                value="https://classmethod.jp"
+                size={160}
+                level="M"
+                marginSize={0}
+              />
             </div>
           </motion.div>
 
