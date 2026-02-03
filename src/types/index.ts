@@ -24,3 +24,7 @@ export interface Benefit {
   rank: RankId;
   used: boolean;
 }
+
+export interface PageContentProps {
+  basePath: string; // "/mini" | "/demo"
+}
